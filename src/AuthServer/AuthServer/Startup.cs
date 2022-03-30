@@ -115,6 +115,7 @@ namespace AuthServer
             app.UseStaticFiles();
             app.UseCors("AllowAll");
             app.UseIdentityServer();
+            app.UseCookiePolicy(new CookiePolicyOptions { MinimumSameSitePolicy = SameSiteMode.Lax });
 
             app.UseMvc(routes =>
             {
